@@ -14,14 +14,31 @@
 
 @implementation SearchViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // 64 point margin (20 status bar + 44 UISearchBar).
+    self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
+
+#pragma mark - UITableView data source
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 0;
+}
+
+- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return nil;
+}
+    
+
 
 @end
