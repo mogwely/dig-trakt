@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E733D031BD3CC5000DF108A /* TraktAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E733D021BD3CC5000DF108A /* TraktAPIClient.m */; };
 		8E8035111BD170A2000BE4F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8035101BD170A2000BE4F7 /* main.m */; };
 		8E8035141BD170A2000BE4F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8035131BD170A2000BE4F7 /* AppDelegate.m */; };
 		8E8035171BD170A2000BE4F7 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8035161BD170A2000BE4F7 /* SearchViewController.m */; };
@@ -14,6 +15,8 @@
 		8E80351C1BD170A3000BE4F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E80351B1BD170A3000BE4F7 /* Images.xcassets */; };
 		8E80351F1BD170A3000BE4F7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E80351D1BD170A3000BE4F7 /* LaunchScreen.xib */; };
 		8E80352B1BD170A3000BE4F7 /* DigTraktTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E80352A1BD170A3000BE4F7 /* DigTraktTests.m */; };
+		8ECA76AD1BD2940D00784C5E /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA76AC1BD2940D00784C5E /* Constants.m */; };
+		BC9534BB740653889466C03E /* libPods-DigTrakt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FD7420F199A18E1289E5F0 /* libPods-DigTrakt.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E733D011BD3CC5000DF108A /* TraktAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraktAPIClient.h; sourceTree = "<group>"; };
+		8E733D021BD3CC5000DF108A /* TraktAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraktAPIClient.m; sourceTree = "<group>"; };
 		8E80350B1BD170A2000BE4F7 /* DigTrakt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigTrakt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E80350F1BD170A2000BE4F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E8035101BD170A2000BE4F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +45,11 @@
 		8E8035241BD170A3000BE4F7 /* DigTraktTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigTraktTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8035291BD170A3000BE4F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E80352A1BD170A3000BE4F7 /* DigTraktTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigTraktTests.m; sourceTree = "<group>"; };
+		8ECA76AC1BD2940D00784C5E /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		8ECA76AE1BD2942900784C5E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CCCE97FADBAB75ACBDEBA50C /* Pods-DigTrakt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigTrakt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DigTrakt/Pods-DigTrakt.debug.xcconfig"; sourceTree = "<group>"; };
+		CDDA26B38442169E2ABCDEF1 /* Pods-DigTrakt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigTrakt.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigTrakt/Pods-DigTrakt.release.xcconfig"; sourceTree = "<group>"; };
+		E4FD7420F199A18E1289E5F0 /* libPods-DigTrakt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DigTrakt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9534BB740653889466C03E /* libPods-DigTrakt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +71,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B6F0EBC15458ECE3A7A4C58 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4FD7420F199A18E1289E5F0 /* libPods-DigTrakt.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88D57654C2DA97D2BB96DD0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE97FADBAB75ACBDEBA50C /* Pods-DigTrakt.debug.xcconfig */,
+				CDDA26B38442169E2ABCDEF1 /* Pods-DigTrakt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8E8035021BD170A2000BE4F7 = {
 			isa = PBXGroup;
 			children = (
 				8E80350D1BD170A2000BE4F7 /* DigTrakt */,
 				8E8035271BD170A3000BE4F7 /* DigTraktTests */,
 				8E80350C1BD170A2000BE4F7 /* Products */,
+				88D57654C2DA97D2BB96DD0D /* Pods */,
+				7B6F0EBC15458ECE3A7A4C58 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +115,10 @@
 				8E8035131BD170A2000BE4F7 /* AppDelegate.m */,
 				8E8035151BD170A2000BE4F7 /* SearchViewController.h */,
 				8E8035161BD170A2000BE4F7 /* SearchViewController.m */,
+				8E733D011BD3CC5000DF108A /* TraktAPIClient.h */,
+				8E733D021BD3CC5000DF108A /* TraktAPIClient.m */,
+				8ECA76AC1BD2940D00784C5E /* Constants.m */,
+				8ECA76AE1BD2942900784C5E /* Constants.h */,
 				8E8035181BD170A2000BE4F7 /* Main.storyboard */,
 				8E80351B1BD170A3000BE4F7 /* Images.xcassets */,
 				8E80351D1BD170A3000BE4F7 /* LaunchScreen.xib */,
@@ -126,9 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E80352E1BD170A3000BE4F7 /* Build configuration list for PBXNativeTarget "DigTrakt" */;
 			buildPhases = (
+				8EE4EC569A4420EFE5C59F37 /* Check Pods Manifest.lock */,
 				8E8035071BD170A2000BE4F7 /* Sources */,
 				8E8035081BD170A2000BE4F7 /* Frameworks */,
 				8E8035091BD170A2000BE4F7 /* Resources */,
+				1DDA45C671F1F1AEAD57085C /* Embed Pods Frameworks */,
+				8F7A1DE9050CE613D9A57AB5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,14 +251,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1DDA45C671F1F1AEAD57085C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DigTrakt/Pods-DigTrakt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EE4EC569A4420EFE5C59F37 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8F7A1DE9050CE613D9A57AB5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DigTrakt/Pods-DigTrakt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8E8035071BD170A2000BE4F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8E8035171BD170A2000BE4F7 /* SearchViewController.m in Sources */,
+				8E733D031BD3CC5000DF108A /* TraktAPIClient.m in Sources */,
 				8E8035141BD170A2000BE4F7 /* AppDelegate.m in Sources */,
 				8E8035111BD170A2000BE4F7 /* main.m in Sources */,
+				8ECA76AD1BD2940D00784C5E /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +428,7 @@
 		};
 		8E80352F1BD170A3000BE4F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCCE97FADBAB75ACBDEBA50C /* Pods-DigTrakt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DigTrakt/Info.plist;
@@ -351,6 +439,7 @@
 		};
 		8E8035301BD170A3000BE4F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDDA26B38442169E2ABCDEF1 /* Pods-DigTrakt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DigTrakt/Info.plist;
@@ -412,6 +501,7 @@
 				8E8035301BD170A3000BE4F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E8035311BD170A3000BE4F7 /* Build configuration list for PBXNativeTarget "DigTraktTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +510,7 @@
 				8E8035331BD170A3000BE4F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

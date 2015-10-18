@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E8565C04-006C-4BEC-9891-78E3BA2647D9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DigTrakt</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>182749F5853893F56CF8C7C1B0931DE4587ACC00</key>
+		<string>https://github.com/mogwely/dig-trakt.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DigTrakt.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>182749F5853893F56CF8C7C1B0931DE4587ACC00</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mogwely/dig-trakt.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>182749F5853893F56CF8C7C1B0931DE4587ACC00</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>182749F5853893F56CF8C7C1B0931DE4587ACC00</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DigTrakt</string>
+		</dict>
+	</array>
+</dict>
+</plist>
