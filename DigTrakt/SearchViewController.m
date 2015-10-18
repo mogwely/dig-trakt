@@ -9,6 +9,8 @@
 #import "SearchViewController.h"
 #import "Constants.h"
 #import "TraktAPIClient.h"
+#import "Movie.h"
+#import "SearchResultCell.h"
 
 @interface SearchViewController ()
 
@@ -25,6 +27,14 @@
     
     // 64 point margin (20 status bar + 44 UISearchBar).
     self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+    
+    self.tableView.rowHeight = 80;
+    
+    UINib* cellNib = [UINib nibWithNibName:SEARCH_RESULT_CELL_NIB bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:SEARCH_RESULT_CELL_IDENTIFIER];
+    
+    cellNib = [UINib nibWithNibName:NOTHING_FOUND_CELL_NIB bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:NOTHING_FOUND_CELL_IDENTIFIER];
     
     TraktAPIClient* client = [TraktAPIClient sharedClient];
     
@@ -47,10 +57,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    //User didnt search yet.
     if(_searchResults == nil){
         
         return 0;
         
+    //User searched but no results match the query
+    }else if([_searchResults count] == 0){
+        
+        return 1;
+        
+    //Searched with results
     }else{
         return [_searchResults count];
         
@@ -59,10 +76,37 @@
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:SEARCH_RESULT_CELL_IDENTIFIER];
-    cell.textLabel.text = _searchResults[indexPath.row];
+    //No results match the query
+    if ([_searchResults count] == 0) {
+        
+        return [tableView dequeueReusableCellWithIdentifier: NOTHING_FOUND_CELL_IDENTIFIER];
+        
+    }else {
+        
+        SearchResultCell* cell = [tableView dequeueReusableCellWithIdentifier:SEARCH_RESULT_CELL_IDENTIFIER];
+        
+        Movie* movie = _searchResults[indexPath.row];
+        cell.titleLabel.text = [NSString stringWithFormat:@"%@ produced in %@", movie.title, movie.year];
+        cell.overviewLabel.text = movie.overview;
+        
+        return cell;
+    }
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return cell;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (NSIndexPath*) tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if([_searchResults count] == 0){
+        return  nil;
+        
+    }else{
+        return indexPath;
+    }
+    
 }
 
 #pragma mark - UISearchBarDelegate
@@ -74,7 +118,11 @@
     _searchResults = [NSMutableArray arrayWithCapacity:10];
     
     for(int i=0; i<3; i++){
-        [_searchResults addObject:[NSString stringWithFormat:@"fake text %d for '%@'", i, searchBar.text]];
+        Movie* movie = [[Movie alloc] init];
+        movie.title = [NSString stringWithFormat:@"%@",searchBar.text];
+        movie.year = @"1999";
+        movie.overview = [NSString stringWithFormat:@"fake overview for %d", i];
+        [_searchResults addObject:movie];
     }
     
     [self.tableView reloadData];

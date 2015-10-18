@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8E733D031BD3CC5000DF108A /* TraktAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E733D021BD3CC5000DF108A /* TraktAPIClient.m */; };
+		8E733D071BD4038400DF108A /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E733D061BD4038400DF108A /* Movie.m */; };
+		8E733D0D1BD4128600DF108A /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E733D0C1BD4128600DF108A /* SearchResultCell.xib */; };
+		8E733D131BD41EAC00DF108A /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E733D121BD41EAC00DF108A /* SearchResultCell.m */; };
+		8E733D151BD4277F00DF108A /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E733D141BD4277F00DF108A /* NothingFoundCell.xib */; };
 		8E8035111BD170A2000BE4F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8035101BD170A2000BE4F7 /* main.m */; };
 		8E8035141BD170A2000BE4F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8035131BD170A2000BE4F7 /* AppDelegate.m */; };
 		8E8035171BD170A2000BE4F7 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8035161BD170A2000BE4F7 /* SearchViewController.m */; };
@@ -32,6 +36,12 @@
 /* Begin PBXFileReference section */
 		8E733D011BD3CC5000DF108A /* TraktAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraktAPIClient.h; sourceTree = "<group>"; };
 		8E733D021BD3CC5000DF108A /* TraktAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraktAPIClient.m; sourceTree = "<group>"; };
+		8E733D051BD4038400DF108A /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		8E733D061BD4038400DF108A /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		8E733D0C1BD4128600DF108A /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		8E733D111BD41EAC00DF108A /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
+		8E733D121BD41EAC00DF108A /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
+		8E733D141BD4277F00DF108A /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		8E80350B1BD170A2000BE4F7 /* DigTrakt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigTrakt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E80350F1BD170A2000BE4F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E8035101BD170A2000BE4F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -117,9 +127,15 @@
 				8E8035161BD170A2000BE4F7 /* SearchViewController.m */,
 				8E733D011BD3CC5000DF108A /* TraktAPIClient.h */,
 				8E733D021BD3CC5000DF108A /* TraktAPIClient.m */,
-				8ECA76AC1BD2940D00784C5E /* Constants.m */,
+				8E733D051BD4038400DF108A /* Movie.h */,
+				8E733D061BD4038400DF108A /* Movie.m */,
+				8E733D111BD41EAC00DF108A /* SearchResultCell.h */,
+				8E733D121BD41EAC00DF108A /* SearchResultCell.m */,
 				8ECA76AE1BD2942900784C5E /* Constants.h */,
+				8ECA76AC1BD2940D00784C5E /* Constants.m */,
 				8E8035181BD170A2000BE4F7 /* Main.storyboard */,
+				8E733D0C1BD4128600DF108A /* SearchResultCell.xib */,
+				8E733D141BD4277F00DF108A /* NothingFoundCell.xib */,
 				8E80351B1BD170A3000BE4F7 /* Images.xcassets */,
 				8E80351D1BD170A3000BE4F7 /* LaunchScreen.xib */,
 				8E80350E1BD170A2000BE4F7 /* Supporting Files */,
@@ -238,6 +254,8 @@
 			files = (
 				8E80351A1BD170A3000BE4F7 /* Main.storyboard in Resources */,
 				8E80351F1BD170A3000BE4F7 /* LaunchScreen.xib in Resources */,
+				8E733D0D1BD4128600DF108A /* SearchResultCell.xib in Resources */,
+				8E733D151BD4277F00DF108A /* NothingFoundCell.xib in Resources */,
 				8E80351C1BD170A3000BE4F7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,10 +322,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E733D071BD4038400DF108A /* Movie.m in Sources */,
 				8E8035171BD170A2000BE4F7 /* SearchViewController.m in Sources */,
 				8E733D031BD3CC5000DF108A /* TraktAPIClient.m in Sources */,
 				8E8035141BD170A2000BE4F7 /* AppDelegate.m in Sources */,
 				8E8035111BD170A2000BE4F7 /* main.m in Sources */,
+				8E733D131BD41EAC00DF108A /* SearchResultCell.m in Sources */,
 				8ECA76AD1BD2940D00784C5E /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

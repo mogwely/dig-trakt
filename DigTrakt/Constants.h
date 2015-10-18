@@ -7,7 +7,12 @@
 //
 #import <Foundation/Foundation.h>
 
+//Cell identifiers
 extern NSString* const SEARCH_RESULT_CELL_IDENTIFIER;
+extern NSString* const NOTHING_FOUND_CELL_IDENTIFIER;
+//Cell Nibs
+extern NSString* const SEARCH_RESULT_CELL_NIB;
+extern NSString* const NOTHING_FOUND_CELL_NIB;
 
 //Trakt API key & URLString
 extern NSString* const TRAKT_API_KEY;
