@@ -13,5 +13,6 @@
 @property (copy,nonatomic) NSString* title;
 @property (copy,nonatomic) NSString* year;
 @property (copy,nonatomic) NSString* overview;
+@property (copy,nonatomic) NSString* posterUrl;
 
 @end

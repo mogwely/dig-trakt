@@ -40,44 +40,21 @@
     return self;
 }
 
-/*- (void)getShowsForDate:(NSDate *)date
-               username:(NSString *)username
-          numbersOfDays:(int)numberOfDays
-                success:(void(^)(NSURLSessionDataTask *task, id responseObject))success
-                failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure {
-    
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd";
-    NSString* dateString = [formatter stringFromDate:date];
-    
-    NSString* path = [NSString stringWithFormat:@"%@calendars/all/shows/%@/%d",
-                      TRAKT_BASE_URL_STRING, dateString, numberOfDays];
-    
-    [self GET:path parameters:@{@"extended" : @"images"} success:^(NSURLSessionDataTask *task, id responseObject) {
-        if (success) {
-            success(task, responseObject);
-        }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        if (failure) {
-            failure(task, error);
-        }
-    }];
-    
-}*/
-
-
 - (void)getMoviesForQuery:(NSString *)query
+                     page:(NSInteger)page
                   success:(void(^)(NSURLSessionDataTask *task, id responseObject))success
                   failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure
 {
+    //escapes special characters
+    NSString* escapedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     
-    NSString* path = [NSString stringWithFormat:@"search?query=%@&type=movie",query];
-                    //[NSString stringWithFormat:@"search?query=batman&type=movie"];
-                    //[NSString stringWithFormat:@"movies/tron-legacy-2010"];
-                      //,TRAKT_API_KEY, username, dateString, numberOfDays];
+    NSString *pageString = [NSString stringWithFormat: @"%ld", (long)page];
     
-    [self GET:path parameters:@{@"extended" : @"min", @"page" : @"1", @"limit" : @"10"} success:^(NSURLSessionDataTask *task, id responseObject) {
+    NSString* path = [NSString stringWithFormat:@"search?query=%@&type=movie",escapedQuery];
+    
+    [self GET:path parameters:@{@"extended" : @"full,images", @"page" : pageString, @"limit" : @"10"} success:^(NSURLSessionDataTask *task, id responseObject) {
         if (success) {
+            
             success(task, responseObject);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -86,5 +63,27 @@
         }
     }];
 }
+
+
+- (void)getPopularMoviesByPage:(NSInteger)page
+                       success:(void(^)(NSURLSessionDataTask *task, id responseObject))success
+                       failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure;
+{
+    
+    NSString *pageString = [NSString stringWithFormat: @"%ld", (long)page];
+    NSString* path = [NSString stringWithFormat:@"movies/popular"];
+    
+    [self GET:path parameters:@{@"extended" : @"full,images", @"page" : pageString, @"limit" : @"10"} success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (success) {
+            
+            success(task, responseObject);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failure) {
+            failure(task, error);
+        }
+    }];
+}
+
 
 @end

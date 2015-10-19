@@ -15,7 +15,12 @@
 + (TraktAPIClient *)sharedClient;
 
 - (void)getMoviesForQuery:(NSString *)query
+                     page:(NSInteger)page
                 success:(void(^)(NSURLSessionDataTask *task, id responseObject))success
                 failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure;
+
+- (void)getPopularMoviesByPage:(NSInteger)page
+                  success:(void(^)(NSURLSessionDataTask *task, id responseObject))success
+                  failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 @end

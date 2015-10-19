@@ -16,7 +16,16 @@
 @implementation AppDelegate
 
 
+- (void)customizeAppearance {
+    
+    UIColor *barTintColor = [UIColor colorWithRed:239/255.0f green:62/255.0f blue:69/255.0f alpha:1.0f];
+    [[UISearchBar appearance] setBarTintColor:barTintColor];
+    self.window.tintColor = [UIColor colorWithRed:10/255.0f green:80/255.0f blue:80/255.0f alpha:1.0f];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [self customizeAppearance];
     
     //shows the network activity indicator when AFNetworking is performing network requests.
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;

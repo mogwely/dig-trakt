@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D39DE42349260486EE3A0993'
+               BlueprintIdentifier = 'E61D4185B7D3B470ADDD0089'
                BlueprintName = 'Pods-DigTrakt'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-DigTrakt.a'>
